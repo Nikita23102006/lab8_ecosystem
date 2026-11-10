@@ -1,0 +1,15 @@
+[project]
+name = "lab8-ecosystem"
+version = "1.0.0"
+description = "Лабораторная работа №8: экосистема Python (вариант 8)"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+# Корень проекта — в путь импорта, чтобы тесты видели модули заданий.
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = [
+    # предупреждение внутри starlette, к коду лабораторной отношения не имеет
+    "ignore:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
+]
